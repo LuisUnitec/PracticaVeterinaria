@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dueño {
@@ -5,6 +7,16 @@ public class Dueño {
     private int edad;
     private String telefono;
     private String direccion;
+
+    private List<Mascota> listaMascotas = new ArrayList<>();
+
+    public List<Mascota> getListaMascotas() {
+        return listaMascotas;
+    }
+
+    public void setListaMascotas(List<Mascota> listaMascotas) {
+        this.listaMascotas = listaMascotas;
+    }
 
     public void leerDatos()
     {
@@ -17,6 +29,15 @@ public class Dueño {
         direccion = s.nextLine();
         System.out.println("Teclea la edad del dueño");
         edad = s.nextInt();
+    }
+
+    //toString especifica el formato de impresión de un objeto new*
+    public String toString()
+    {
+        return "Nombre: " + nombre + "\n"
+                + "Direccion: " + direccion + "\n"
+                + "Macotas registradas:" + "\n"
+                + listaMascotas;
     }
 
     public String getNombre() {

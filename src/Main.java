@@ -20,15 +20,42 @@ public class Main {
             switch(opcion) {
                 case 1:
                     dueñoRegistrado = new Dueño();
+                    dueñoRegistrado.leerDatos();
+                    break;
 
                 case 2:
+                    Scanner s = new Scanner(System.in);
+                    System.out.println("Que tipo de mascota quieres? 1.- Gato 2.- Perro");
+                    int tipoElegido = s.nextInt();
+                    logger.log(Level.INFO, "Mascota Registrada : " + tipoElegido);
+                    if (tipoElegido == 1){
+                        Gato g = new Gato();
+                        g.leerDatos();
+
+                        dueñoRegistrado.getListaMascotas().add(g);
+                    }else if (tipoElegido == 2){
+                        Perro p = new Perro();
+                        p.leerDatos();
+
+                        dueñoRegistrado.getListaMascotas().add(p);
+                    }else {
+                        logger.log(Level.WARNING, "Opcion invalida");
+                        System.out.println("Esa opcion no es valida");
+                    }
+
+                    break;
                 case 3:
                 case 4:
+                    System.out.println("-----------------");
+                    System.out.println(dueñoRegistrado);
+                    break;
+                case 5:
+                    System.out.println("Gracias! Vuelva pronto");
                 default:
                     logger.log(Level.INFO, "Usuario seleccionó opción incorrecta: " + opcion);
                     System.out.println("Opción incorrecta");
             }
-        } while (opcion != 4);
+        } while (opcion != 5);
     }
 
     /* Menú de opciones para el usuario */
@@ -40,7 +67,8 @@ public class Main {
         System.out.println("1.- Registrar nuevo dueño");
         System.out.println("2.- Registrar mascota");
         System.out.println("3.- Registrar registrar cita");
-        System.out.println("4.- Salir");
+        System.out.println("4.- Imprimir Datos");
+        System.out.println("5.- Salir");
 
         return s.nextInt();
     }

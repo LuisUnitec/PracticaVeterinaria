@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dueño {
@@ -5,6 +7,15 @@ public class Dueño {
     private int edad;
     private String telefono;
     private String direccion;
+    private List<Mascota> ListaMascotas = new ArrayList<>();
+
+    public List<Mascota> getListaMascotas() {
+        return ListaMascotas;
+    }
+
+    public void setListaMascotas(List<Mascota> listaMascotas) {
+        ListaMascotas = listaMascotas;
+    }
 
     public void leerDatos()
     {
@@ -17,6 +28,13 @@ public class Dueño {
         direccion = s.nextLine();
         System.out.println("Teclea la edad del dueño");
         edad = s.nextInt();
+    }
+
+    public String toString(){
+        return "Nombre: " + nombre + "\n"
+                + "Direccion: " + direccion +"\n"
+                + "Mascotas registradas: " + "\n"
+                + ListaMascotas;
     }
 
     public String getNombre() {

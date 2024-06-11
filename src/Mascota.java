@@ -4,7 +4,6 @@ public class Mascota {
     private String nombre;
     private String tipo;
     private String noIdentificacion;
-
     private LocalDate fechaNacimiento;
 
     public String getNombre() {

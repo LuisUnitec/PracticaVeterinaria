@@ -20,8 +20,11 @@ public class Main {
             switch(opcion) {
                 case 1:
                     dueñoRegistrado = new Dueño();
+                    dueñoRegistrado.leerDatos ();
+                    break;
 
                 case 2:
+
                 case 3:
                 case 4:
                 default:
@@ -32,7 +35,7 @@ public class Main {
     }
 
     /* Menú de opciones para el usuario */
-    public static int imprimirMenu() {
+    public static int imprimirMenuMascotas() {
         Scanner s = new Scanner(System.in);
 
         System.out.println("Sistema de control de citas - El Borrego Viudo");
@@ -45,6 +48,24 @@ public class Main {
         return s.nextInt();
     }
 
+
+    public static int imprimemenuMascotas() {
+        System.out.println("Que tipo de mascota vas a registraar");
+        System.out.println("1.- Gato");
+        System.out.println("2.- Perro");
+        System.out.println("3.- Tortuga");
+
+        int option = s.nextInt();
+
+        if(opcion == 1) {
+            Gato g = new Gato();
+            System.out.println("cual es el nombre del gato");
+            s.nextLine();
+            g.setNombre(s.nextLine());
+            Logger.log(level.INFO, "Se registro un nuevo gato"+ g.getNombre());
+        }
+
+    }
     /* Configuración de los logs */
     private static Logger configurarLogs() {
 

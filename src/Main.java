@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Descomentar una vez que se haya creado la clase Dueño
-        Dueño dueñoRegistrado = new Dueño();
+        Dueño dueñoRegistrado;
 
         int opcion;
         do {
@@ -51,7 +51,7 @@ public class Main {
     public static void imprimirMenuMascotas() {
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Qué tipo de mascota vas a reistrar?");
+        System.out.println("Qué tipo de mascota vas a registrar?");
         System.out.println("1.- Gato");
         System.out.println("2.- Perro");
         System.out.println("3.- Tortuga");
